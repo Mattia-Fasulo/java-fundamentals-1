@@ -52,6 +52,10 @@ public class TicketCalculator {
         System.out.println("Travel cost: " + travelCostFormatter);
 
 
+        //chiudo lo scan
+        scan.close();
+
+
 
     }
 }

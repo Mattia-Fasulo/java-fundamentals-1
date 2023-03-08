@@ -54,5 +54,8 @@ public class FizzBuzz {
 
         //stampo il risultato
         System.out.println(Arrays.toString(numbers));
+
+        //chiudo lo scan
+        scan.close();
     }
 }
