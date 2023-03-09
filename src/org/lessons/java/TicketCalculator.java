@@ -8,14 +8,14 @@ public class TicketCalculator {
 
         Scanner scan = new Scanner(System.in);
 
-        int numKm;
-        int ageUser;
+        double priceKm = 0.21;
 
         double discount = 0;
-
-        double priceKm = 0.21;
         double discountUnder = 0.2;
         double discountOver = 0.4;
+
+        int numKm;
+        int ageUser;
 
         double travelCost;
 
@@ -32,16 +32,13 @@ public class TicketCalculator {
         //calcolo il prezzo del viaggio
         travelCost = numKm * priceKm;
 
-        //calcolo lo sconto nel caso in cui l'utente è minorenne
+        //calcolo lo sconto nel caso in cui l'utente è minorenne o over 65
         if(ageUser < 18){
             discount = travelCost * discountUnder;
-            travelCost = (numKm * priceKm) - discount;
-        }
-
-        //calcolo lo sconto nel caso in cui l'utente è over 65
-        if(ageUser > 65){
+            travelCost -= discount;
+        } else if (ageUser > 65){
             discount = travelCost * discountOver;
-            travelCost = (numKm * priceKm) - discount;
+            travelCost -= discount;
         }
 
 
