@@ -9,25 +9,25 @@ public class FizzBuzz {
 
         Scanner scan = new Scanner(System.in);
 
-        //chiedo all'utente quanti numeri vuole stampare
-        System.out.println("Enter a number between 0 and 1000: ");
-        int numToPrint = Integer.parseInt(scan.nextLine());
+        //inizializzo una variabile flag
+        boolean validInput = false;
 
+        int numToPrint = 0;
 
-        //qui gestisco il caso in cui l'utente inserisca un numero fuori dal range
-        if(numToPrint < 0){
-            System.out.println("************");
-            System.out.println("Error, the number must be between 0 and 1000!");
-            System.out.println("************");
+        //chiedo all'utente quanti numeri vuole stampare e gestisco il caso in cui l'utente inserisca un numero fuori dal range
+        // DO WHILE sarebbe meglio
+        while(!validInput){
             System.out.println("Enter a number between 0 and 1000: ");
             numToPrint = Integer.parseInt(scan.nextLine());
-        } else if (numToPrint > 1000) {
-            System.out.println("************");
-            System.out.println("Error, the number must be between 0 and 1000!");
-            System.out.println("************");
-            System.out.println("Enter a number between 0 and 1000: ");
-            numToPrint = Integer.parseInt(scan.nextLine());
+
+            if(numToPrint > 0 && numToPrint < 1000){
+                validInput = true;
+
+            } else {
+                System.out.println("Error, the number must be between 0 and 1000!");
+            }
         }
+
 
         //inizializzo un array con il numero inserito dall'user
         String[] numbers = new String[numToPrint];
