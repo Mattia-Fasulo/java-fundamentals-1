@@ -34,11 +34,10 @@ public class TicketCalculator {
 
         //calcolo lo sconto nel caso in cui l'utente è minorenne o over 65
         if(ageUser < 18){
-            discount = travelCost * discountUnder;
-            travelCost -= discount;
+            travelCost -= travelCost * discountUnder;
+
         } else if (ageUser > 65){
-            discount = travelCost * discountOver;
-            travelCost -= discount;
+            travelCost -= travelCost * discountOver;
         }
 
 
