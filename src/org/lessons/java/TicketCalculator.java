@@ -10,7 +10,6 @@ public class TicketCalculator {
 
         double priceKm = 0.21;
 
-        double discount = 0;
         double discountUnder = 0.2;
         double discountOver = 0.4;
 
@@ -44,7 +43,7 @@ public class TicketCalculator {
 
 
         //formatto il prezzo del viaggio
-        DecimalFormat df = new DecimalFormat("0.00");
+        DecimalFormat df = new DecimalFormat("0.00 €");
         String travelCostFormatter = df.format(travelCost) ;
 
         //stampo il prezzo del viaggio formattato

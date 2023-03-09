@@ -34,19 +34,15 @@ public class FizzBuzz {
 
 
         //vado a inserire i dati all'interno dell'array
-        for(int i = 0; i < numbers.length; i++){
-            numbers[i] = String.valueOf(i + 1);
+        for(int i = 1; i <= numbers.length; i++){
+            numbers[i - 1] = String.valueOf(i);
 
-           if((i + 1) % 3 == 0){
-               numbers[i] = "Fizz";
+           if(i % 3 == 0){
+               numbers[i - 1] = "Fizz";
            }
 
-           if((i + 1) % 5 == 0){
-                numbers[i] = "Buzz";
-           }
-
-           if( ((i + 1) % 5 == 0) && ((i + 1) % 3 == 0)){
-                numbers[i] = "FizzBuzz";
+           if(i % 5 == 0){
+                numbers[i - 1] = "Buzz";
            }
 
 
