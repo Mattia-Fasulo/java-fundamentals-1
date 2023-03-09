@@ -10,34 +10,37 @@ public class TicketCalculator {
 
         int numKm;
         int ageUser;
+
         double discount = 0;
 
         double priceKm = 0.21;
+        double discountUnder = 0.2;
+        double discountOver = 0.4;
 
         double travelCost;
 
         //chiedo all'utente l'età
-        System.out.println("Your age: ");
+        System.out.print("Your age: ");
         ageUser = Integer.parseInt(scan.nextLine());
-        System.out.println("*****************************");
+
 
         //chiedo quanti chilometri devere percorrere
-        System.out.println("Distance in Km: ");
+        System.out.print("Distance in Km: ");
         numKm = Integer.parseInt(scan.nextLine());
-        System.out.println("*****************************");
+
 
         //calcolo il prezzo del viaggio
         travelCost = numKm * priceKm;
 
         //calcolo lo sconto nel caso in cui l'utente è minorenne
         if(ageUser < 18){
-            discount = (travelCost * 20) / 100;
+            discount = travelCost * discountUnder;
             travelCost = (numKm * priceKm) - discount;
         }
 
         //calcolo lo sconto nel caso in cui l'utente è over 65
         if(ageUser > 65){
-            discount = (travelCost * 40) / 100;
+            discount = travelCost * discountOver;
             travelCost = (numKm * priceKm) - discount;
         }
 
